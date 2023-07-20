@@ -40,6 +40,15 @@ def computeScore(questionNumber,result,rightAnswer,userAnswer):
         computeComputer(result,rightAnswer,userAnswer)
     elif questionNumber>=111 and questionNumber<=120:
         computeEnglish(result,rightAnswer,userAnswer)
+def computeUserInfo(arr):
+    applicationSequenceNumber = arr[1].text.strip()
+    name = arr[3].text.strip()
+    TC_name = arr[5].text.strip()
+    return {
+        'rollNumber' : applicationSequenceNumber,
+        'candidateName' : name,
+        'TC Name' : TC_name
+    }
 def printQuestionStats(questionsArray):
     totalAttempt = 0
     result = {
